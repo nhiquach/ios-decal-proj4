@@ -2,17 +2,20 @@
 
 ## Authors
 * Nhi Quach
+
 ## Purpose
 Park With Me is an application that helps people with available parking spaces
 and people in search of a place to park. People will be able to post notices
 that they are renting out their parking space and find spaces for rent around
 them.
+
 ## Features
 * Display available parking spaces within a 1 mile radius of the current
 location
 * Allow users to create postings to rent our their parking space, setting prices
 and times available
 * Communication platform between interested customers and renters
+
 ## Control Flow
 * Users will open to screen giving them the option to search for a parking space
 or rent out their parking space
@@ -28,11 +31,13 @@ able to message the renter to begin the transaction
 ### Model
 * User.swift
 * ParkingSpace.swift
+
 ### View
 * MapView
 * AddPostView
 * MessagesView
 * StartScreenView
+
 ### Controller
 * MapViewController
 * AddPostViewController
