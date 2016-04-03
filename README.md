@@ -30,7 +30,7 @@ able to message the renter to begin the transaction
 
 ### Model
 * User.swift
-* ParkingSpace.swift
+* ParkingSpacePost.swift
 
 ### View
 * MapView
