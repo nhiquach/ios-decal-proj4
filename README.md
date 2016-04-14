@@ -12,13 +12,13 @@ them.
 ## Features
 * Display available parking spaces within a 1 mile radius of the current
 location
-* Allow users to create postings to rent our their parking space, setting prices
-and times available
+* Allow users to create postings to rent our their parking space, setting
+prices and times available
 * Communication platform between interested customers and renters
 
 ## Control Flow
-* Users will open to screen giving them the option to search for a parking space
-or rent out their parking space
+* Users will open to screen giving them the option to search for a parking
+space or rent out their parking space
 * If they are looking for a parking space, the User is presented a marked map
 with indicators for the locations of available spaces and their times and price
 * If the user wishes to rent their space, the user provides input on the times
