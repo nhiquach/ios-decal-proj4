@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BB8546C914667604C5E1E078'
+               BlueprintIdentifier = '3E4DFCDB27F3C49CA23EEACD'
                BlueprintName = 'Pods-ParkWithMe'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-ParkWithMe.a'>
+               BuildableName = 'Pods_ParkWithMe.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

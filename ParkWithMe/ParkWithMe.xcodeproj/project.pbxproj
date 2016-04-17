@@ -20,7 +20,7 @@
 		3CD8A0621CC02528006A1D43 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3CD8A05E1CC02528006A1D43 /* DigitsKitResources.bundle */; };
 		3CD8A0631CC02528006A1D43 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD8A05F1CC02528006A1D43 /* TwitterCore.framework */; };
 		3CD8A0651CC025E5006A1D43 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD8A0641CC025E5006A1D43 /* Stripe.framework */; };
-		41AA61534DD60B904DDA30D1 /* libPods-ParkWithMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 253AF232EDDD0DF8F220BCF0 /* libPods-ParkWithMe.a */; };
+		D8E87CCD6D6DFC5F89D6DE93 /* Pods_ParkWithMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0617AA55BF48C72AB3E793C /* Pods_ParkWithMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		253AF232EDDD0DF8F220BCF0 /* libPods-ParkWithMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ParkWithMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD8A0271CC02472006A1D43 /* ParkWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CD8A02C1CC02472006A1D43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		3CD8A0641CC025E5006A1D43 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
 		47FB5485F2D30A8106A85125 /* Pods-ParkWithMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkWithMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkWithMe/Pods-ParkWithMe.release.xcconfig"; sourceTree = "<group>"; };
 		BB41F225AB311785EDACB625 /* Pods-ParkWithMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkWithMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkWithMe/Pods-ParkWithMe.debug.xcconfig"; sourceTree = "<group>"; };
+		F0617AA55BF48C72AB3E793C /* Pods_ParkWithMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkWithMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 				3CD8A0631CC02528006A1D43 /* TwitterCore.framework in Frameworks */,
 				3CD8A0611CC02528006A1D43 /* DigitsKit.framework in Frameworks */,
 				3CD8A0651CC025E5006A1D43 /* Stripe.framework in Frameworks */,
-				41AA61534DD60B904DDA30D1 /* libPods-ParkWithMe.a in Frameworks */,
+				D8E87CCD6D6DFC5F89D6DE93 /* Pods_ParkWithMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +166,7 @@
 		52E34E80F88F5FFE555BC356 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				253AF232EDDD0DF8F220BCF0 /* libPods-ParkWithMe.a */,
+				F0617AA55BF48C72AB3E793C /* Pods_ParkWithMe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
