@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'ParkWithMe' do
     pod 'Firebase', '>= 2.5.1'
+    pod 'ChameleonFramework/Swift'
 end
 
 target 'ParkWithMeTests' do

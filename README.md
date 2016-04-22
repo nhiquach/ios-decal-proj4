@@ -43,3 +43,6 @@ able to message the renter to begin the transaction
 * AddPostViewController
 * MessagesViewController
 * StartScreenViewController
+
+## Credits
+* Firebase for Backend

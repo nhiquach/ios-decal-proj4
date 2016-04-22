@@ -9,18 +9,48 @@
 import Fabric
 import Stripe
 import DigitsKit
+import Firebase
 import UIKit
 import CoreData
+import CoreLocation
+import ChameleonFramework
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    let manager = CLLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Digits.self, STPAPIClient.self])
+        
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatWatermelonColor(), withContentStyle: UIContentStyle.Contrast)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let ref = Firebase(url: "https://blazing-inferno-8100.firebaseio.com")
+        
+        let startVC: String!
+        
+        if ref.authData != nil {
+            // user authenticated
+            print(ref.authData)
+            startVC = "TabBarController"
+        } else {
+            // No user is signed in
+            startVC = "LoginViewController"
+        }
+        
+        let rootController = storyboard.instantiateViewControllerWithIdentifier(startVC) 
+        
+        if let window = self.window {
+            window.rootViewController = rootController
+            self.window?.makeKeyAndVisible()
+        }
+        
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        
         return true
     }
 

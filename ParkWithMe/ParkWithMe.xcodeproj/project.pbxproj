@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2A9DD41CC9560500B916C7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A9DD31CC9560500B916C7 /* TabBarController.swift */; };
+		3C904C241CC9D59F007B24FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C904C231CC9D59F007B24FE /* MapViewController.swift */; };
 		3CD8A02B1CC02472006A1D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */; };
-		3CD8A02D1CC02472006A1D43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8A02C1CC02472006A1D43 /* ViewController.swift */; };
 		3CD8A0301CC02472006A1D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD8A02E1CC02472006A1D43 /* Main.storyboard */; };
 		3CD8A0331CC02472006A1D43 /* ParkWithMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8A0311CC02472006A1D43 /* ParkWithMe.xcdatamodeld */; };
 		3CD8A0351CC02472006A1D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CD8A0341CC02472006A1D43 /* Assets.xcassets */; };
@@ -42,9 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C2A9DD31CC9560500B916C7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3C2A9DD51CC9587D00B916C7 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Font_Awesome_Swift.framework; path = "Pods/../build/Debug-iphoneos/Font_Awesome_Swift.framework"; sourceTree = "<group>"; };
+		3C2A9DD71CC958D100B916C7 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Font_Awesome_Swift.framework; path = "Pods/../build/Debug-iphoneos/Font_Awesome_Swift.framework"; sourceTree = "<group>"; };
+		3C904C231CC9D59F007B24FE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3CD8A0271CC02472006A1D43 /* ParkWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3CD8A02C1CC02472006A1D43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3CD8A02F1CC02472006A1D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CD8A0321CC02472006A1D43 /* ParkWithMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParkWithMe.xcdatamodel; sourceTree = "<group>"; };
 		3CD8A0341CC02472006A1D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,9 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */,
-				3CD8A02C1CC02472006A1D43 /* ViewController.swift */,
 				3CFB294A1CC31425001DE31B /* LoginViewController.swift */,
+				3C2A9DD31CC9560500B916C7 /* TabBarController.swift */,
 				3CD8A02E1CC02472006A1D43 /* Main.storyboard */,
+				3C904C231CC9D59F007B24FE /* MapViewController.swift */,
 				3CD8A0341CC02472006A1D43 /* Assets.xcassets */,
 				3CD8A0361CC02472006A1D43 /* LaunchScreen.storyboard */,
 				3CD8A0391CC02472006A1D43 /* Info.plist */,
@@ -169,6 +174,8 @@
 		52E34E80F88F5FFE555BC356 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C2A9DD71CC958D100B916C7 /* Font_Awesome_Swift.framework */,
+				3C2A9DD51CC9587D00B916C7 /* Font_Awesome_Swift.framework */,
 				F0617AA55BF48C72AB3E793C /* Pods_ParkWithMe.framework */,
 			);
 			name = Frameworks;
@@ -375,8 +382,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CFB294B1CC31425001DE31B /* LoginViewController.swift in Sources */,
-				3CD8A02D1CC02472006A1D43 /* ViewController.swift in Sources */,
 				3CD8A0331CC02472006A1D43 /* ParkWithMe.xcdatamodeld in Sources */,
+				3C2A9DD41CC9560500B916C7 /* TabBarController.swift in Sources */,
+				3C904C241CC9D59F007B24FE /* MapViewController.swift in Sources */,
 				3CD8A02B1CC02472006A1D43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +530,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ParkWithMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -539,6 +548,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ParkWithMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
