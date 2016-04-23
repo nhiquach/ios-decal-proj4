@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C2A9DD41CC9560500B916C7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A9DD31CC9560500B916C7 /* TabBarController.swift */; };
+		3C6B49531CCB59CC00C8C3C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B49521CCB59CC00C8C3C7 /* User.swift */; };
 		3C904C241CC9D59F007B24FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C904C231CC9D59F007B24FE /* MapViewController.swift */; };
 		3CD8A02B1CC02472006A1D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */; };
 		3CD8A0301CC02472006A1D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD8A02E1CC02472006A1D43 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		3CD8A0621CC02528006A1D43 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3CD8A05E1CC02528006A1D43 /* DigitsKitResources.bundle */; };
 		3CD8A0631CC02528006A1D43 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD8A05F1CC02528006A1D43 /* TwitterCore.framework */; };
 		3CD8A0651CC025E5006A1D43 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD8A0641CC025E5006A1D43 /* Stripe.framework */; };
+		3CDC1B621CCB49B4005F131F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC1B611CCB49B4005F131F /* Post.swift */; };
 		3CFB294B1CC31425001DE31B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB294A1CC31425001DE31B /* LoginViewController.swift */; };
 		D8E87CCD6D6DFC5F89D6DE93 /* Pods_ParkWithMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0617AA55BF48C72AB3E793C /* Pods_ParkWithMe.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,7 @@
 		3C2A9DD31CC9560500B916C7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3C2A9DD51CC9587D00B916C7 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Font_Awesome_Swift.framework; path = "Pods/../build/Debug-iphoneos/Font_Awesome_Swift.framework"; sourceTree = "<group>"; };
 		3C2A9DD71CC958D100B916C7 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Font_Awesome_Swift.framework; path = "Pods/../build/Debug-iphoneos/Font_Awesome_Swift.framework"; sourceTree = "<group>"; };
+		3C6B49521CCB59CC00C8C3C7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3C904C231CC9D59F007B24FE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3CD8A0271CC02472006A1D43 /* ParkWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		3CD8A05E1CC02528006A1D43 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
 		3CD8A05F1CC02528006A1D43 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		3CD8A0641CC025E5006A1D43 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
+		3CDC1B611CCB49B4005F131F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3CFB294A1CC31425001DE31B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		47FB5485F2D30A8106A85125 /* Pods-ParkWithMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkWithMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkWithMe/Pods-ParkWithMe.release.xcconfig"; sourceTree = "<group>"; };
 		BB41F225AB311785EDACB625 /* Pods-ParkWithMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkWithMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkWithMe/Pods-ParkWithMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +114,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3C6B49501CCB59A800C8C3C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC1B611CCB49B4005F131F /* Post.swift */,
+				3C6B49521CCB59CC00C8C3C7 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3C6B49511CCB59B100C8C3C7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CFB294A1CC31425001DE31B /* LoginViewController.swift */,
+				3C2A9DD31CC9560500B916C7 /* TabBarController.swift */,
+				3C904C231CC9D59F007B24FE /* MapViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		3CD8A01E1CC02472006A1D43 = {
 			isa = PBXGroup;
 			children = (
@@ -140,11 +163,10 @@
 		3CD8A0291CC02472006A1D43 /* ParkWithMe */ = {
 			isa = PBXGroup;
 			children = (
+				3C6B49511CCB59B100C8C3C7 /* ViewControllers */,
+				3C6B49501CCB59A800C8C3C7 /* Models */,
 				3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */,
-				3CFB294A1CC31425001DE31B /* LoginViewController.swift */,
-				3C2A9DD31CC9560500B916C7 /* TabBarController.swift */,
 				3CD8A02E1CC02472006A1D43 /* Main.storyboard */,
-				3C904C231CC9D59F007B24FE /* MapViewController.swift */,
 				3CD8A0341CC02472006A1D43 /* Assets.xcassets */,
 				3CD8A0361CC02472006A1D43 /* LaunchScreen.storyboard */,
 				3CD8A0391CC02472006A1D43 /* Info.plist */,
@@ -383,7 +405,9 @@
 			files = (
 				3CFB294B1CC31425001DE31B /* LoginViewController.swift in Sources */,
 				3CD8A0331CC02472006A1D43 /* ParkWithMe.xcdatamodeld in Sources */,
+				3C6B49531CCB59CC00C8C3C7 /* User.swift in Sources */,
 				3C2A9DD41CC9560500B916C7 /* TabBarController.swift in Sources */,
+				3CDC1B621CCB49B4005F131F /* Post.swift in Sources */,
 				3C904C241CC9D59F007B24FE /* MapViewController.swift in Sources */,
 				3CD8A02B1CC02472006A1D43 /* AppDelegate.swift in Sources */,
 			);

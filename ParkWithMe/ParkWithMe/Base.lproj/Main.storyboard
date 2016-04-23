@@ -40,15 +40,11 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mE-1k-lWB">
                                 <rect key="frame" x="70" y="333" width="459" height="38"/>
-                                <color key="backgroundColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="loginDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQy-Rf-Uvd"/>
-                                    <segue destination="hpa-ui-HEh" kind="show" identifier="loginToMap" id="Lw2-b0-vgy"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaS-qp-Iwa">
                                 <rect key="frame" x="70" y="390" width="459" height="30"/>
@@ -84,12 +80,15 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Zoo-aZ-YdW" id="5Dj-5k-Rl8"/>
+                        <outlet property="loginButton" destination="7mE-1k-lWB" id="frd-h4-tQl"/>
                         <outlet property="passwordTextField" destination="Dw1-Ye-OMm" id="7ze-cy-fQZ"/>
+                        <outlet property="signupButton" destination="BaS-qp-Iwa" id="NQV-9v-QxV"/>
+                        <segue destination="hpa-ui-HEh" kind="show" identifier="loginToMap" id="K3p-V3-Cgo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="240"/>
+            <point key="canvasLocation" x="52" y="30"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="PEn-uE-DK8">
@@ -152,7 +151,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Park With Me" id="WFo-cD-dAy">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="lgd-FM-dTi">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="lgd-FM-dTi">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="q9c-Ci-FM5">
@@ -160,12 +159,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="logoutButton" destination="lgd-FM-dTi" id="NR9-sf-qU9"/>
                         <outlet property="mapView" destination="ScC-ho-kco" id="m7x-np-rg7"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="returnToLogin" modalPresentationStyle="fullScreen" id="iB6-eu-o8X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgm-EW-5BC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576" y="-245"/>
+            <point key="canvasLocation" x="2564" y="-1097"/>
         </scene>
         <!--TabBarController-->
         <scene sceneID="eRc-lv-E6E">
@@ -183,7 +184,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyu-TG-eKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="240"/>
+            <point key="canvasLocation" x="776" y="56"/>
         </scene>
         <!--List-->
         <scene sceneID="YLP-K6-20r">
@@ -223,7 +224,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us3-fs-IPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="-245"/>
+            <point key="canvasLocation" x="1756" y="-221"/>
         </scene>
     </scenes>
     <resources>

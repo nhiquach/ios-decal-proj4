@@ -17,16 +17,22 @@ class LoginViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        loginButton.addTarget(self, action: "loginDidTouch", forControlEvents: .TouchUpInside)
+        loginButton.backgroundColor = UIColor.flatSkyBlueColor()
+        signupButton.backgroundColor = UIColor.clearColor()
+        
     }
     
     
-    @IBAction func loginDidTouch(sender: AnyObject) {
+    func loginDidTouch() {
         rootRef.authUser(emailTextField.text, password: passwordTextField.text,
             withCompletionBlock: { error, authData in
                 if error != nil {
@@ -41,38 +47,48 @@ class LoginViewController: UIViewController {
                         case .InvalidPassword:
                             errorMessage = "Invalid password"
                         default:
-                            errorMessage = ""
+                            errorMessage = "An error has occurred. Please try again."
                         }
                     }
-                    
                     let alertController = UIAlertController(
                         title: "Log In Error",
                         message: errorMessage,
                         preferredStyle: .Alert)
-                    
                     let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-                    
                     alertController.addAction(cancelAction)
-                    
                     self.presentViewController(alertController, animated: true, completion: nil)
-
                 } else {
                     // We are now logged in
                     print("User logged in successfully")
-                    self.performSegueWithIdentifier("loginToMap", sender: sender)
+                    self.performSegueWithIdentifier("loginToMap", sender: self)
                 }
         })
     }
-    
     
     @IBAction func signUpDidTouch(sender: AnyObject) {
         rootRef.createUser(emailTextField.text, password: passwordTextField.text,
             withValueCompletionBlock: { error, result in
                 if error != nil {
-                    // There was an error creating the account
+                    // TODO: There was an error creating the account
                 } else {
                     let uid = result["uid"] as? String
+                    
+                    let newUser = [
+                        "email": self.emailTextField.text! as String
+                    ]
+                    
+                    self.rootRef.childByAppendingPath("users")
+                        .childByAppendingPath(uid).setValue(newUser)
+                    
                     print("Successfully created user account with uid: \(uid!)")
+                    
+                    let alertController = UIAlertController(
+                        title: "Sign Up Successful!",
+                        message: nil,
+                        preferredStyle: .Alert)
+                    let doneAction = UIAlertAction(title: "Close", style: .Default , handler: nil)
+                    alertController.addAction(doneAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
         })
     }

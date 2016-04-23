@@ -9,21 +9,32 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     let manager = CLLocationManager()
+    let rootRef = Firebase(url:"https://blazing-inferno-8100.firebaseio.com")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.requestLocation()
-        
+        logoutButton.target = self
+        logoutButton.action = "logout"
     }
+    
+    func logout() {
+        rootRef.unauth()
+        self.performSegueWithIdentifier("returnToLogin", sender: self)
+    }
+    
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
