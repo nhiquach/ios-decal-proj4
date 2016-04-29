@@ -23,9 +23,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        loginButton.addTarget(self, action: "loginDidTouch", forControlEvents: .TouchUpInside)
+        loginButton.addTarget(self, action: #selector(LoginViewController.loginDidTouch), forControlEvents: .TouchUpInside)
         loginButton.backgroundColor = UIColor.flatSkyBlueColor()
         signupButton.backgroundColor = UIColor.clearColor()
         

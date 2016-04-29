@@ -26,7 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         manager.requestWhenInUseAuthorization()
         manager.requestLocation()
         logoutButton.target = self
-        logoutButton.action = "logout"
+        logoutButton.action = #selector(MapViewController.logout)
     }
     
     func logout() {

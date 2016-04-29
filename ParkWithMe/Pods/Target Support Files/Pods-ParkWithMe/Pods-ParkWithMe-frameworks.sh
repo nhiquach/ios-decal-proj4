@@ -85,13 +85,17 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-ParkWithMe/ChameleonFramework.framework"
+  install_framework "Pods-ParkWithMe/Eureka.framework"
   install_framework "Pods-ParkWithMe/Firebase.framework"
+  install_framework "Pods-ParkWithMe/GeoFire.framework"
   install_framework "Pods-ParkWithMe/JSQMessagesViewController.framework"
   install_framework "Pods-ParkWithMe/JSQSystemSoundPlayer.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-ParkWithMe/ChameleonFramework.framework"
+  install_framework "Pods-ParkWithMe/Eureka.framework"
   install_framework "Pods-ParkWithMe/Firebase.framework"
+  install_framework "Pods-ParkWithMe/GeoFire.framework"
   install_framework "Pods-ParkWithMe/JSQMessagesViewController.framework"
   install_framework "Pods-ParkWithMe/JSQSystemSoundPlayer.framework"
 fi
