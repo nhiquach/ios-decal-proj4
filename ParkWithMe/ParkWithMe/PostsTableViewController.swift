@@ -11,7 +11,6 @@ import UIKit
 class PostsTableViewController: UITableViewController {
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

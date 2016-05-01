@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
                         title: "Sign Up Successful!",
                         message: nil,
                         preferredStyle: .Alert)
-                    let doneAction = UIAlertAction(title: "Close", style: .Default , handler: nil)
+                    let doneAction = UIAlertAction(title: "Dismiss", style: .Default , handler: nil)
                     alertController.addAction(doneAction)
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }

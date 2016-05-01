@@ -106,10 +106,18 @@
                     <navigationItem key="navigationItem" id="VTb-RO-yzC">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VIM-NU-QtU">
                             <connections>
-                                <segue destination="0h3-MC-g8p" kind="unwind" unwindAction="unwindToList:" id="WNo-Dx-HQw"/>
+                                <segue destination="0h3-MC-g8p" kind="unwind" identifier="unwindFromCancel" unwindAction="unwindToList:" id="WNo-Dx-HQw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="L9d-FX-yuJ">
+                            <connections>
+                                <segue destination="0h3-MC-g8p" kind="unwind" identifier="unwindFromSave" unwindAction="unwindToList:" id="xws-aj-oH2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="L9d-FX-yuJ" id="hi9-uz-mnq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igU-YK-HNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0h3-MC-g8p" userLabel="Exit" sceneMemberID="exit"/>
