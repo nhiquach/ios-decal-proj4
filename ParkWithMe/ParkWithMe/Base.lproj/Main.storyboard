@@ -90,6 +90,24 @@
             </objects>
             <point key="canvasLocation" x="52" y="30"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="uMF-Qz-Rb6">
+            <objects>
+                <viewController id="V1d-HZ-2wp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Jh-sL-59i"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZWE-CY-wzc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1G9-Mf-JDk">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHV-mA-S5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4046" y="-842"/>
+        </scene>
         <!--Chat View Controller-->
         <scene sceneID="qkN-Cr-sOe">
             <objects>
@@ -396,7 +414,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5qj-KT-qCd" kind="show" id="SqZ-eY-4Sz"/>
+                                    <segue destination="5qj-KT-qCd" kind="show" identifier="goToChatSegue" id="SqZ-eY-4Sz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-tK-ccs">
@@ -407,6 +425,9 @@
                                 <state key="normal" title="Book Now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="V1d-HZ-2wp" kind="show" identifier="paymentSegue" id="b8o-2B-uer"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89126098155975342" green="0.3545563817024231" blue="0.39968371391296387" alpha="1" colorSpace="calibratedRGB"/>

@@ -10,6 +10,7 @@ target 'ParkWithMe' do
     pod 'JSQMessagesViewController'
     pod 'GeoFire', '>= 1.1'
     pod 'Eureka', '~> 1.5'
+    pod 'Braintree'
 end
 
 target 'ParkWithMeTests' do

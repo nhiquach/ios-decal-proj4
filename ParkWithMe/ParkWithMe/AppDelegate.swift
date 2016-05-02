@@ -26,7 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         Fabric.with([Digits.self, STPAPIClient.self])
         
         Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatWatermelonColor(), withContentStyle: UIContentStyle.Contrast)
-        
+
+        // TODO: Replace with your own test publishable key
+        // TODO: DEBUG ONLY! Remove / conditionalize before launch
+        Stripe.setDefaultPublishableKey("pk_test_6pRNASCoBOKtIshFeQd4XMUh")
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let ref = Firebase(url: "https://blazing-inferno-8100.firebaseio.com")
         

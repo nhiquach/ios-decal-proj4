@@ -61,6 +61,7 @@
 		3C904C231CC9D59F007B24FE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3CB359C61CD71B3800E8725F /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		3CB359C81CD7265600E8725F /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3CB359CE1CD7327A00E8725F /* ParkWithMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParkWithMe-Bridging-Header.h"; sourceTree = "<group>"; };
 		3CC4C8771CD685A40089170F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3CD3B07E1CD2031F00F063A2 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = "Pods/../build/Debug-iphoneos/Eureka.framework"; sourceTree = "<group>"; };
 		3CD8A0271CC02472006A1D43 /* ParkWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +191,7 @@
 				3CD8A0361CC02472006A1D43 /* LaunchScreen.storyboard */,
 				3CD8A0391CC02472006A1D43 /* Info.plist */,
 				3CD8A0311CC02472006A1D43 /* ParkWithMe.xcdatamodeld */,
+				3CB359CE1CD7327A00E8725F /* ParkWithMe-Bridging-Header.h */,
 			);
 			path = ParkWithMe;
 			sourceTree = "<group>";
@@ -586,6 +588,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nhiquach.ParkWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ParkWithMe/ParkWithMe-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -604,6 +607,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nhiquach.ParkWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ParkWithMe/ParkWithMe-Bridging-Header.h";
 			};
 			name = Release;
 		};

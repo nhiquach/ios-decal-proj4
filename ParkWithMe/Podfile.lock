@@ -1,4 +1,22 @@
 PODS:
+  - Braintree (4.2.3):
+    - Braintree/Card (= 4.2.3)
+    - Braintree/Core (= 4.2.3)
+    - Braintree/PayPal (= 4.2.3)
+    - Braintree/UI (= 4.2.3)
+  - Braintree/Card (4.2.3):
+    - Braintree/Core
+  - Braintree/Core (4.2.3)
+  - Braintree/PayPal (4.2.3):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.2.3)
+  - Braintree/PayPalOneTouch (4.2.3):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+  - Braintree/UI (4.2.3):
+    - Braintree/Card
+    - Braintree/Core
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
@@ -12,6 +30,7 @@ PODS:
   - JSQSystemSoundPlayer (2.0.1)
 
 DEPENDENCIES:
+  - Braintree
   - ChameleonFramework/Swift
   - Eureka (~> 1.5)
   - Firebase (>= 2.5.1)
@@ -19,6 +38,7 @@ DEPENDENCIES:
   - JSQMessagesViewController
 
 SPEC CHECKSUMS:
+  Braintree: 05791bdc6d43c3faf2f802dd2d687e9f619f7f57
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Eureka: 2fb37bb50569c62ee3284689d5b7aca694b040e0
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
