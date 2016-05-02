@@ -93,6 +93,7 @@ class PostsTableViewController: UITableViewController, CLLocationManagerDelegate
         if self.currentLocation == nil {
             return
         }
+
         let query = self.geoFire.queryAtLocation(self.currentLocation, withRadius: 1.6)
 
         query.observeEventType(.KeyEntered, withBlock: { (key: String!, location: CLLocation!) in
