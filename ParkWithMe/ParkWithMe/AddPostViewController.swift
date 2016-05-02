@@ -11,10 +11,12 @@ import Eureka
 import Firebase
 import CoreLocation
 import AddressBookUI
+import GeoFire
 
 class AddPostViewController : FormViewController {
 
     let rootRef = Firebase(url:"https://blazing-inferno-8100.firebaseio.com")
+    let geoFire = GeoFire(firebaseRef: Firebase(url:"https://blazing-inferno-8100.firebaseio.com"))
     var post: Post?
 
 
@@ -42,7 +44,7 @@ class AddPostViewController : FormViewController {
             }
             <<< MultipleSelectorRow<String>("featuresTag") {
                 $0.title = "Features"
-                $0.options = ["CCTV", "Covered", "Electric Charging", "Compact"]
+                $0.options = ["CCTV", "Covered", "Electric Charging", "Compact", "Overnight"]
             }
         +++ Section("Description")
             <<< TextAreaRow("descriptionTag") { $0.placeholder = "Description" }
@@ -53,31 +55,63 @@ class AddPostViewController : FormViewController {
     
     
     func pressedSaveButton() {
-        let authData = rootRef.authData
-        let data = getFormValues()
-        if data == [:] {
-            return
+        if let authData = rootRef.authData {
+            let data = getFormValues()
+            if data == [:] {
+                return
+            }
+            self.rootRef.childByAppendingPath("posts").childByAppendingPath(data["address"] as! String).updateChildValues(data as [NSObject : AnyObject])
+            self.rootRef.childByAppendingPath("posts").childByAppendingPath(data["address"] as! String).updateChildValues(["uid": authData.uid])
+            saveLocation(data)
+            self.performSegueWithIdentifier("unwindFromSave", sender: self)
         }
-
-        self.post = Post(data: data)
-
-        self.rootRef.childByAppendingPath("users")
-            .childByAppendingPath(authData.uid).childByAppendingPath("posts")
-            .childByAppendingPath(data["address"] as! String).setValue(data)
-
-        let alertController = UIAlertController(
-            title: "Post Created!",
-            message: nil,
-            preferredStyle: .Alert)
-        let doneAction = UIAlertAction(title: "Dismiss", style: .Default , handler: nil)
-        alertController.addAction(doneAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-
-        self.performSegueWithIdentifier("unwindFromSave", sender: self)
 
     }
 
-    //TODO: Handle null values
+    func saveLocation(data: NSDictionary) {
+        let key = data["address"] as! String
+        self.post = Post(data: data)
+
+        forwardGeocoding(key, post: self.post!, completion: {
+            success, coordinate in
+
+            if success {
+                let lat = coordinate.latitude
+                let long = coordinate.longitude
+                self.post!.lat = "\(lat)"
+                self.post!.lon = "\(long)"
+                let latStr = (self.post!.lat as NSString).doubleValue
+                let lonStr = (self.post!.lon as NSString).doubleValue
+                self.geoFire.setLocation(CLLocation(latitude: latStr, longitude: lonStr), forKey: key)
+            } else {
+                // error sth went wrong
+            }
+            
+        })
+
+    }
+
+
+    func forwardGeocoding(address: String, post: Post, completion: (Bool, CLLocationCoordinate2D!) -> () ) {
+        let geoCoder = CLGeocoder()
+
+        geoCoder.geocodeAddressString(address) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+
+            if error != nil {
+                print(error?.localizedDescription)
+                completion(false,nil)
+            } else {
+                if placemarks!.count > 0 {
+                    let placemark = placemarks![0] as CLPlacemark
+                    let location = placemark.location
+
+                    completion(true, location?.coordinate)
+                    
+                }
+            }
+        }
+    }
+
     func getFormValues() -> NSDictionary {
         let addressRow : PostalAddressRow? = form.rowByTag("addressTag")
         let dateStartingRow : DateTimeRow? = form.rowByTag("dateStartingTag")
@@ -124,6 +158,7 @@ class AddPostViewController : FormViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm"
 
+        data["street"] = addressRow!.cell.streetTextField.text!
         data["address"] = fullAddress
         data["startingDate"] = dateFormatter.stringFromDate(dateStarting!)
         data["endDate"] = dateFormatter.stringFromDate(dateUntil!)

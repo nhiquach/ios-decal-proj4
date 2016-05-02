@@ -128,18 +128,65 @@
         <scene sceneID="PEn-uE-DK8">
             <objects>
                 <tableViewController id="IJf-8f-FWZ" customClass="PostsTableViewController" customModule="ParkWithMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lc2-I1-0tp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="157" sectionHeaderHeight="28" sectionFooterHeight="28" id="lc2-I1-0tp">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" id="9Ia-lE-DfM">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="130" id="9Ia-lE-DfM" customClass="PostTableViewCell" customModule="ParkWithMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ia-lE-DfM" id="HMc-tb-HHe">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price - Space Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HS-lM-Az6">
+                                            <rect key="frame" x="27" y="8" width="189" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="JaL-LJ-dFI"/>
+                                                <constraint firstAttribute="width" constant="189" id="p3m-mb-RLj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQt-bz-baS">
+                                            <rect key="frame" x="27" y="37" width="62" height="24"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBW-sj-cse">
+                                            <rect key="frame" x="27" y="63" width="116" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Until:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDi-9Y-HRe">
+                                            <rect key="frame" x="27" y="92" width="112" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aBW-sj-cse" firstAttribute="leading" secondItem="3HS-lM-Az6" secondAttribute="leading" id="1AM-z3-4pz"/>
+                                        <constraint firstItem="yQt-bz-baS" firstAttribute="top" secondItem="3HS-lM-Az6" secondAttribute="bottom" constant="8" symbolic="YES" id="2FH-Ey-WIr"/>
+                                        <constraint firstItem="3HS-lM-Az6" firstAttribute="top" secondItem="HMc-tb-HHe" secondAttribute="topMargin" id="7TM-ei-7IL"/>
+                                        <constraint firstItem="aBW-sj-cse" firstAttribute="top" secondItem="yQt-bz-baS" secondAttribute="bottom" constant="2" id="aUX-eR-oDq"/>
+                                        <constraint firstItem="fDi-9Y-HRe" firstAttribute="leading" secondItem="3HS-lM-Az6" secondAttribute="leading" id="fJD-xN-yFG"/>
+                                        <constraint firstItem="yQt-bz-baS" firstAttribute="leading" secondItem="3HS-lM-Az6" secondAttribute="leading" id="gXN-CO-tle"/>
+                                        <constraint firstItem="yQt-bz-baS" firstAttribute="leading" secondItem="3HS-lM-Az6" secondAttribute="leading" id="xmW-ek-7Sk"/>
+                                        <constraint firstItem="fDi-9Y-HRe" firstAttribute="top" secondItem="aBW-sj-cse" secondAttribute="bottom" constant="8" symbolic="YES" id="yRd-TA-SWD"/>
+                                        <constraint firstItem="3HS-lM-Az6" firstAttribute="leading" secondItem="HMc-tb-HHe" secondAttribute="leadingMargin" constant="19" id="ybw-7e-fru"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="yQt-bz-baS" id="UQP-Pg-5wM"/>
+                                    <outlet property="availableFromLabel" destination="aBW-sj-cse" id="9rb-c9-U4T"/>
+                                    <outlet property="availableUntilLabel" destination="fDi-9Y-HRe" id="q7X-ja-ZZR"/>
+                                    <outlet property="priceAndTypeLabel" destination="3HS-lM-Az6" id="33x-v1-Jmj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
