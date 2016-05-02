@@ -195,7 +195,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="kSU-ya-OfV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="cd2-sa-48a">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="cd2-sa-48a">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pc8-1m-1z4">
@@ -205,6 +205,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="refreshButton" destination="cd2-sa-48a" id="fH2-pP-rfp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Epv-n1-VcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,6 +248,7 @@
                     <connections>
                         <outlet property="logoutButton" destination="lgd-FM-dTi" id="NR9-sf-qU9"/>
                         <outlet property="mapView" destination="ScC-ho-kco" id="m7x-np-rg7"/>
+                        <outlet property="queryButton" destination="q9c-Ci-FM5" id="nph-Ip-TzS"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="returnToLogin" modalPresentationStyle="fullScreen" id="iB6-eu-o8X"/>
                     </connections>
                 </viewController>

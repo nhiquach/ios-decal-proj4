@@ -7,14 +7,37 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
+import Firebase
+import GeoFire
 
-class PostsTableViewController: UITableViewController {
-    
+class PostsTableViewController: UITableViewController, CLLocationManagerDelegate {
+
+    let manager = CLLocationManager()
+    let rootRef = Firebase(url:"https://blazing-inferno-8100.firebaseio.com")
+    let geoFire = GeoFire(firebaseRef: Firebase(url:"https://blazing-inferno-8100.firebaseio.com"))
+    var currentLocation : CLLocation?
     var posts = [Post]()
+
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.requestLocation()
+        
+        refreshButton.target = self
+        refreshButton.action = #selector(PostsTableViewController.nearbyPosts)
     }
+
 
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindFromSave" {
@@ -52,4 +75,40 @@ class PostsTableViewController: UITableViewController {
         cell.priceAndTypeLabel.sizeToFit()
         return cell
     }
+
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            print("Found user's location: \(location)")
+            self.currentLocation = location
+            nearbyPosts()
+        }
+    }
+
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+
+    func nearbyPosts() {
+        if self.currentLocation == nil {
+            return
+        }
+        let query = self.geoFire.queryAtLocation(self.currentLocation, withRadius: 1.6)
+
+        query.observeEventType(.KeyEntered, withBlock: { (key: String!, location: CLLocation!) in
+
+
+            let postRef = self.rootRef.childByAppendingPath("posts").childByAppendingPath(key)
+            postRef.observeEventType(.Value, withBlock: {
+                snapshot in
+                self.posts.append(Post(data:snapshot.value as! NSDictionary))
+              
+            })
+            self.tableView.reloadData()
+        })
+        
+    }
+
+
+
 }
