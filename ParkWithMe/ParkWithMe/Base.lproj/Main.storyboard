@@ -186,7 +186,6 @@
                                     <outlet property="availableFromLabel" destination="aBW-sj-cse" id="9rb-c9-U4T"/>
                                     <outlet property="availableUntilLabel" destination="fDi-9Y-HRe" id="q7X-ja-ZZR"/>
                                     <outlet property="priceAndTypeLabel" destination="3HS-lM-Az6" id="33x-v1-Jmj"/>
-                                    <segue destination="sW1-i6-byw" kind="show" identifier="postDetailSegue" id="HfN-LG-FXT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -208,6 +207,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="refreshButton" destination="cd2-sa-48a" id="fH2-pP-rfp"/>
+                        <segue destination="sW1-i6-byw" kind="show" identifier="postDetailSegue" id="hzT-EI-OSl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Epv-n1-VcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,6 +410,17 @@
                             <constraint firstItem="ZOc-2y-eR5" firstAttribute="top" secondItem="bhf-sV-rz1" secondAttribute="bottom" constant="20" id="yg8-fx-TIO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="o1P-zn-CgA" id="uiT-0x-bJT"/>
+                        <outlet property="availableFromLabel" destination="eqY-4y-tjd" id="c9p-dG-VMS"/>
+                        <outlet property="availableUntilLabel" destination="FHI-pV-FJR" id="lFQ-u6-UMt"/>
+                        <outlet property="bookButton" destination="nM9-tK-ccs" id="jAn-NW-ypA"/>
+                        <outlet property="contactButton" destination="Sex-eJ-pnM" id="4h5-Ei-hwG"/>
+                        <outlet property="descriptionLabel" destination="xlS-fp-68j" id="8Vp-hr-Ewh"/>
+                        <outlet property="featuresLabel" destination="ZOc-2y-eR5" id="BDd-hH-8gl"/>
+                        <outlet property="priceLabel" destination="bhf-sV-rz1" id="RvH-yC-Odh"/>
+                        <outlet property="spaceTypeLabel" destination="gSa-6z-BR0" id="GhT-k3-TeA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYD-Ja-J0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

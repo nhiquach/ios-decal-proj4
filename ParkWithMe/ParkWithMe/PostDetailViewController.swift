@@ -11,4 +11,26 @@ import UIKit
 class PostDetailViewController: UIViewController {
 
     
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var featuresLabel: UILabel!
+    @IBOutlet weak var availableFromLabel: UILabel!
+    @IBOutlet weak var availableUntilLabel: UILabel!
+    @IBOutlet weak var spaceTypeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var contactButton: UIButton!
+    @IBOutlet weak var bookButton: UIButton!
+
+    var post: Post?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addressLabel.text = post?.streetAddress
+        priceLabel.text = post?.pricePerHour
+        featuresLabel.text = post?.features
+        availableFromLabel.text = "Available From " + (post?.startFormatted)!
+        availableUntilLabel.text = "Available Until " + (post?.endFormatted)!
+        spaceTypeLabel.text = post?.spaceType
+        descriptionLabel.text = post?.description
+    }
 }

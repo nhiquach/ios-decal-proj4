@@ -76,6 +76,10 @@ class PostsTableViewController: UITableViewController, CLLocationManagerDelegate
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("postDetailSegue", sender: indexPath)
+    }
+
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
@@ -108,6 +112,16 @@ class PostsTableViewController: UITableViewController, CLLocationManagerDelegate
             self.tableView.reloadData()
         })
         
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "postDetailSegue" {
+            let destVC = segue.destinationViewController as! PostDetailViewController
+            let selectedPost = self.posts[(sender as! NSIndexPath).row] 
+            destVC.post = selectedPost
+        }
     }
 
 
