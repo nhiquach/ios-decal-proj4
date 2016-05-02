@@ -13,6 +13,7 @@
 		3C6B49531CCB59CC00C8C3C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B49521CCB59CC00C8C3C7 /* User.swift */; };
 		3C904C241CC9D59F007B24FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C904C231CC9D59F007B24FE /* MapViewController.swift */; };
 		3CB359C71CD71B3900E8725F /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB359C61CD71B3800E8725F /* PostDetailViewController.swift */; };
+		3CB359C91CD7265600E8725F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB359C81CD7265600E8725F /* ChatViewController.swift */; };
 		3CC4C8781CD685A40089170F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4C8771CD685A40089170F /* PostTableViewCell.swift */; };
 		3CD3B07F1CD2031F00F063A2 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD3B07E1CD2031F00F063A2 /* Eureka.framework */; };
 		3CD8A02B1CC02472006A1D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8A02A1CC02472006A1D43 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		3C6B49521CCB59CC00C8C3C7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3C904C231CC9D59F007B24FE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3CB359C61CD71B3800E8725F /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		3CB359C81CD7265600E8725F /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3CC4C8771CD685A40089170F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3CD3B07E1CD2031F00F063A2 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = "Pods/../build/Debug-iphoneos/Eureka.framework"; sourceTree = "<group>"; };
 		3CD8A0271CC02472006A1D43 /* ParkWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 				3CB359C61CD71B3800E8725F /* PostDetailViewController.swift */,
 				3CC4C8771CD685A40089170F /* PostTableViewCell.swift */,
 				3C904C231CC9D59F007B24FE /* MapViewController.swift */,
+				3CB359C81CD7265600E8725F /* ChatViewController.swift */,
 				3C4E67871CD1FAD7004AB495 /* AddPostViewController.swift */,
 			);
 			name = ViewControllers;
@@ -431,6 +434,7 @@
 				3CDC1B621CCB49B4005F131F /* Post.swift in Sources */,
 				3CC4C8781CD685A40089170F /* PostTableViewCell.swift in Sources */,
 				3C904C241CC9D59F007B24FE /* MapViewController.swift in Sources */,
+				3CB359C91CD7265600E8725F /* ChatViewController.swift in Sources */,
 				3CD8A02B1CC02472006A1D43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

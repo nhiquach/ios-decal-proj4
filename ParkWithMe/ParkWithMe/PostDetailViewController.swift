@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class PostDetailViewController: UIViewController {
 
@@ -22,6 +24,7 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var bookButton: UIButton!
 
     var post: Post?
+    let rootRef = Firebase(url:"https://blazing-inferno-8100.firebaseio.com")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +35,12 @@ class PostDetailViewController: UIViewController {
         availableUntilLabel.text = "Available Until " + (post?.endFormatted)!
         spaceTypeLabel.text = post?.spaceType
         descriptionLabel.text = post?.description
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        let chatVc = segue.destinationViewController as! ChatViewController
+        chatVc.senderId = self.rootRef.authData.uid
+        chatVc.senderDisplayName = ""
     }
 }

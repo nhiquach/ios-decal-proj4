@@ -90,6 +90,24 @@
             </objects>
             <point key="canvasLocation" x="52" y="30"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="qkN-Cr-sOe">
+            <objects>
+                <viewController id="5qj-KT-qCd" customClass="ChatViewController" customModule="ParkWithMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y1H-9m-Lgw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jsk-ee-LKs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ws9-8J-Hc1">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZm-Gs-Fb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4060" y="-120"/>
+        </scene>
         <!--Add Post View Controller-->
         <scene sceneID="dPE-7W-8MB">
             <objects>
@@ -377,6 +395,9 @@
                                 <state key="normal" title="Contact Owner">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="5qj-KT-qCd" kind="show" id="SqZ-eY-4Sz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-tK-ccs">
                                 <rect key="frame" x="251" y="358" width="99" height="35"/>
